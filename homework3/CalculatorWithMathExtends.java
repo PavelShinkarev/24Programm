@@ -1,6 +1,6 @@
 package homework3;
 
-public class CalculatorWithMathExtends extends CalculatorWithOperator {
+public class CalculatorWithMathExtends extends CalculatorWithOperator implements ICalc {
 
     @Override
     public double pov(double a, int b) {

@@ -1,6 +1,6 @@
 package homework3;
 
-public class CalculatorWithOperator {
+public class CalculatorWithOperator implements ICalc {
     public double division( double a, double b){
         double div = a / b;
         return  div;
