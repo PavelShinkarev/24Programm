@@ -20,14 +20,14 @@ public class CalcMain1 {
         System.out.println(calcResult2);
         System.out.println(calc5.getCounter());
 
-        Fizik fizik3 = new Fizik(new CalcWithCounter(calc1));
+        Fizik<ICalcWithCounter> fizik3 = new Fizik<>(new CalcWithCounter(calc1));
         double calcResult3 = fizik3.calc(123, 77);
         ICalcWithCounter savedCalc = (ICalcWithCounter) fizik3.getCalc();
 
         System.out.println(calcResult3);
         System.out.println(savedCalc.getCounter());
 
-        Fizik fizik4 = new Fizik(calc1);
+        Fizik<ICalcWithCounter> fizik4 = new Fizik(calc1);
         double calcResult4 = fizik4.calc(123, 77);
   //      ICalcWithCounter savedCalc4 = (ICalcWithCounter) fizik4.getCalc();
 

@@ -1,16 +1,17 @@
 package homework3;
 
-public class Fizik {
-    private ICalc calc;
+public class Fizik<T extends ICalc> {
+    private T calc;
 
-    public Fizik(ICalc calc){
+
+    public Fizik(T calc){
         this.calc = calc;
     }
     public double calc(int a, int b){
         return calc.subtration(a,b);
     }
 
-    public ICalc getCalc() {
+    public T getCalc() {
         return calc;
     }
 }
