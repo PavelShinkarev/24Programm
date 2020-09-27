@@ -11,12 +11,12 @@ public class DataContainerMain {
         int b =one.add(72);
         int c =one.add(61);
         int d =one.add(21);
-
-
-
+        int у =one.add(11);
         System.out.println(one.toString());
         one.sort(comparator);
         System.out.println(one.toString());
+
+
 
 
     }

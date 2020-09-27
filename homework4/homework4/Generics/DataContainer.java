@@ -9,7 +9,7 @@ class DataContainer <T> {
     private int index = 0;
 
     DataContainer(Class<T> Integer) {
-        this.data = (T[]) Array.newInstance(Integer, 5);
+        this.data = (T[]) Array.newInstance(Integer, 10);
     }
 
     int add(T item) {

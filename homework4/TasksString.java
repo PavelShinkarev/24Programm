@@ -1,110 +1,182 @@
 package homework4;
 
+import java.util.Scanner;
+
+import static homework4.Numbers.DOUBLE;
+import static homework4.Numbers.MAIN;
+
 public class TasksString {
     private static final String[] UNITS = {"\b","один","два","три","четыре","пять","шесть","семь","восемь",
             "девять","деcять","одинадцать","двенадцать","тринадцать","четырнадцать","пятнадцать","шестнадцать",
             "семнадцать","восемнадцать","девятнадцать"};
-    private static final String[] TEN = {"\b","десять","двадцать","тридать","сорок", "пятьдесят", "шестьдесят",
+    private static final String[] TEN = {"\b","десять","двадцать","тридцать","сорок", "пятьдесят", "шестьдесят",
             "семьдесят", "восемьдесят", "девяноста"};
-    private static final String[] HUND = {"\b","сто","двести","триста","четыристта", "пятьсот", "шестьсот",
+    private static final String[] HUND = {"\b","сто","двести","триста","четыреста", "пятьсот", "шестьсот",
             "семьсот", "восемьсот", "девятьсот"};
-    private static final String[] THOUS = {"\b","одна тысяча","две тысячи", "тысячи","тысячи","тысяч","тысяч","тысяч",
-            "тысяч","тысяч"};
-
+    private static final String[] THOUSun = {"\b","одна тысяча","две тысячи", "три тысячи","четыри тысячи","пять тысяч",
+            "шесть тысяч","семь тысяч", "восемь тысяч","девять тысяч"};
+    private static final String[] THOUS = {"\b","тысяча","тысячи", "тысячи","тысячи","тысяч",
+            "тысяч","тысяч", "тысяч","тысяч"};
+    private static final String[] MILLION = {"\b","миллион","миллиона", "миллиона","миллиона","миллионов",
+            "миллионов","миллионов", "миллионов","миллионов"};
 
     public static void main(String[] args) {
-       String string = toString(87_358);
-        System.out.println(string);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите число от -999_999_999.9999 до 999_999_999.9999");
+        if(scanner.hasNextInt()){
+            int mark = scanner.nextInt();
+            String string = toString(mark, Numbers.MAIN);
+            System.out.println(string);
+        }
+        if(scanner.hasNextDouble()){
+            double mark = scanner.nextDouble();
+            String string = DoubleToString(mark);
+            System.out.println(string);
     }
-    public static String toString(int mark){
-        StringBuilder sb = new StringBuilder();
-        if(mark<20){                            // единицы
-            sb.append(UNITS[mark]);
-        }else if(mark<100){                          // десятки
-             int high = mark/10;
-            int low = mark%10;
-            sb.append(TEN[high]);
-             sb.append(" " + UNITS[low]);
-         }else if(mark<1000){                       // сотни
-            int Hhigh = mark/100;
-            sb.append(HUND[Hhigh]);
-            int high = (mark%100)/10;
+        System.out.println(toWeek(14));
+}
 
-            if(high == 1){                           //
-                int temp = mark % 100;              //        проверка на 1
-                sb.append(" " + UNITS[temp]);
-
-            }else {
-                sb.append(" " + TEN[high]);
-                int low = mark % 10;
-                sb.append(" " + UNITS[low]);
+    public static String toString(int number, Numbers numbers){
+        StringBuilder builder = new StringBuilder();
+        if(number == 0){
+            builder.append(" ноль");
+        }
+        if (number < 1_000_000_000&&number>-1_000_000_000) {
+            if(number<0){
+                builder.append("минус");
+                number*=-1;
             }
-        }else if(mark<10_000){                      // тысячи
-            int Thigh = mark/1000;
-            if(Thigh>2 && Thigh<10) {
-                sb.append(UNITS[ Thigh]);
-            }
-            if(Thigh ==1){
-                sb.append(" "+THOUS[Thigh]);
-            }
-            if(Thigh==2 || Thigh==3 ||Thigh==4){
-                sb.append(" "+THOUS[Thigh]);
-            }
-            if((Thigh==5 || Thigh==6 ||Thigh==7|| Thigh==8 ||Thigh==9)){
-                sb.append(" "+THOUS[Thigh]);
-            }
-            int Hhigh = (mark%1000)/100;
-                sb.append(" " + HUND[Hhigh]);
-                int TNhigh = (mark % 100) / 10;
-
-                if (TNhigh == 1) {                          // if  == 1
-                    int temp = mark % 100;
-                    sb.append(" " + UNITS[temp]);
-
-                } else {
-                    sb.append(" " + TEN[TNhigh]);
-                    int UNhigh = mark % 10;
-                    sb.append(" " + UNITS[UNhigh]);
+                int MillHund = number / 100_000_000;
+                int MillTen = (number % 100_000_000) / 10_000_000;
+                int MillUnit = (number % 10_000_000) / 1_000_000;
+                if (MillHund != 0) {
+                    builder.append(" " + HUND[MillHund]);
                 }
-        }else if(mark<100_000){                     // десятки тысяч
-            int HHigh = mark/10_000;
-            if(HHigh == 1){
-                int temp = mark / 1000;
-                sb.append(UNITS[temp]+ " "+ THOUS[9]);
-            }else{
-                int LHigh = (mark % 10_000) / 1000;
-                if (LHigh == 0) {
-                    sb.append(TEN[HHigh] + " " + THOUS[9]);
-                } else {
-                    sb.append(" " + TEN[HHigh] + " " + UNITS[LHigh] + " " + THOUS[LHigh]);
+                if (MillHund != 0 && MillTen == 0 && MillUnit == 0) {
+                    builder.append(" " + MILLION[9]);
                 }
-            }
-            int High = (mark%1000)/100;
-            sb.append(" "+HUND[High]);
-            int HLow = (mark%100)/10;
-            if(HLow == 1){
-                int temp = mark % 100;
-                sb.append(" "+UNITS[temp]);
-            }else {
-                sb.append(" " + TEN[HLow]);
-                int Low = mark % 10;
-                sb.append(" " + UNITS[Low]);
-            }
-
-
-
-        }else if(mark<1_000_000){                     // сотни тысяч
-            int HHigh = mark/100_000;
-            sb.append(HUND[HHigh]);
-            int LHigh = (mark % 100_000) / 10_000;
-            if(LHigh == 0){
-
+                if (MillTen == 1) {
+                    int temp = (number % 100_000_000) / 1_000_000;
+                    builder.append(" " + UNITS[temp] + " " + MILLION[9]);
                 }
-                sb.append(HUND[HHigh]);
-            }
+                if (MillTen == 0) {
+                    builder.append(" " + UNITS[MillUnit] + " " + MILLION[MillUnit]);
+                }
+                if (MillTen > 1) {
+                    builder.append(" " + TEN[MillTen] + " " + UNITS[MillUnit] + " " + MILLION[MillUnit]);
+                }
+                if (MillTen > 1 && MillUnit == 0) {
+                    builder.append(" " + MILLION[9]);
+                }
+                number = number % 1_000_000;
+                int ThousHund = number / 100_000;
+                int ThousTen = (number % 100_000) / 10_000;
+                int ThousUnit = (number % 10_000) / 1_000;
+                if (ThousHund != 0) {
+                    builder.append(" " + HUND[ThousHund]);
+                }
+                if (ThousHund != 0 && ThousTen == 0 && ThousUnit == 0) {
+                    builder.append(" " + THOUS[9]);
+                }
+                if (ThousTen == 1) {
+                    int temp = (number % 100_000) / 1_000;
+                    builder.append(" " + UNITS[temp] + " " + THOUS[9]);
+                }
+                if (ThousTen == 0) {
+                    builder.append(" " + THOUSun[ThousUnit]);
+                }
+                if (ThousTen > 1) {
+                    builder.append(" " + TEN[ThousTen] + " "  + THOUSun[ThousUnit]);
+                }
+                if (ThousTen > 1 && ThousUnit == 0) {
+                    builder.append(" " + THOUS[9]);
+                }
+                number = number % 1000;
+                int Hund = number / 100;
+                int Ten = (number % 100) / 10;
+                int Unit = number % 10;
+                if (Hund != 0) {
+                    builder.append(" " + HUND[Hund]);
+                }
+                if (Ten == 1) {
+                    int temp = number % 100;
+                    builder.append(" " + UNITS[temp]);
+                }
+                if (Ten == 0) {
+                    if(numbers==MAIN){
+                        builder.append(" " + UNITS[Unit]);
+                    }
 
-
-
-         return sb.toString();
+                    if(numbers == DOUBLE ){
+                        if(Unit ==1){
+                            builder.append(" " + TEN[Ten] +" одна");
+                        }
+                        if(Unit == 2){
+                            builder.append(" " + TEN[Ten] +" две");
+                        }
+                        if(Unit > 2){
+                            builder.append(" " + TEN[Ten] + " " + UNITS[Unit]);
+                        }
+                    }
+                }
+                if (Ten > 1) {
+                    if(numbers == MAIN) {
+                        builder.append(" " + TEN[Ten] + " " + UNITS[Unit]);
+                    }
+                    if(numbers == DOUBLE ){
+                        if(Unit ==1){
+                            builder.append(" " + TEN[Ten] +" одна");
+                        }
+                        if(Unit == 2){
+                            builder.append(" " + TEN[Ten] +" две");
+                        }
+                        if(Unit > 2){
+                            builder.append(" " + TEN[Ten] + " " + UNITS[Unit]);
+                        }
+                    }
+                }
+        }
+            return builder.toString();
     }
+    public static String DoubleToString(double number){
+        StringBuilder builder = new StringBuilder();
+            if(number<0){
+                 builder.append("минус");
+                 number*=-1;
+                }
+            int mark = (int) number;        // целая часть
+            int tmp = mark%10;
+            double temp = (number - mark)*100;
+            int FNumber = (int) temp;      // дробная часть
+            int tmp2 = FNumber%10;
+            String string = toString(mark, DOUBLE);
+            if(tmp == 1){
+                builder.append(string +" целая");
+            }else {
+                builder.append(string + " целых");
+            }
+            String string1 = toString(FNumber, DOUBLE);
+            if(tmp2 == 1){
+                builder.append(string1 + " " + "сотая");
+             }else {
+                builder.append(string1 + " " + "сотых");
+            }
+        return builder.toString();
+   }
+
+    public static String toWeek(int day){
+        StringBuilder builder = new StringBuilder();
+        int week = day / 7;
+        int temp = week%10;
+        if(temp == 1){
+            builder.append(week +" " + "неделя");
+        }
+        if(temp==2||temp==3||temp==4){
+            builder.append(week + " " + "недели");
+        }
+        if(temp>4){
+            builder.append(week + " " + "недель");
+        }
+        return builder.toString();
+     }
 }
