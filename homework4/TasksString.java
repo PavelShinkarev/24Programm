@@ -27,13 +27,14 @@ public class TasksString {
             int mark = scanner.nextInt();
             String string = toString(mark, Numbers.MAIN);
             System.out.println(string);
+            System.out.println(toWeek(mark));
         }
         if(scanner.hasNextDouble()){
             double mark = scanner.nextDouble();
             String string = DoubleToString(mark);
             System.out.println(string);
     }
-        System.out.println(toWeek(14));
+
 }
 
     public static String toString(int number, Numbers numbers){
