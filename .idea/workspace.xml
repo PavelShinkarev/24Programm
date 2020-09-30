@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8772e26e-13b3-48bb-a094-ada7717addb1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/homework4/Numbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework4/TasksString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework4/homework4/Generics/DataComporator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework5/EasySearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework5/ISearchEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework5/RegExSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework4/homework4/Generics/DataContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework4/homework4/Generics/DataContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework4/homework4/Generics/DataContainerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework4/homework4/Generics/DataContainerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework4/homework4/TasksString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework5/WarAndPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework5/WarAndPiece.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1iCK0RTHN1zbyE5DbHzIfeOos8f" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8772e26e-13b3-48bb-a094-ada7717addb1" name="Default Changelist" comment="" />
+      <created>1601405910019</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601405910019</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1601405929892">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601405929892" />
+  </component>
+</project>
