@@ -8,11 +8,10 @@ import java.util.*;
 public class WarAndPiece {
     public static void main(String[] args) {
         String filePath = "d:/Java/Война и мир_книга.txt";
-        String content = (readAllBytes(filePath).replaceAll("\\p{Punct}", " "));
+        String content = (readAllBytes(filePath));
 
-        content = content.replaceAll("[^a-zA-Zа-яА-Я]", " " );
-        String[]str = content.split("\\s");
         Set<String> uniques = new HashSet<>();
+        String[]str = content.split("\\s+");
         for (String word : str)
             uniques.add(word);
         System.out.println(uniques);
@@ -28,6 +27,7 @@ public class WarAndPiece {
         System.out.println(collection);
 
         List list = new ArrayList(collection.entrySet());
+
         Collections.sort(list, (Comparator<Map.Entry<Integer, Integer>>)
                 (o1, o2) -> o2.getValue()-o1.getValue());
         for (int i = 0; i < list.size(); i++) {
@@ -38,7 +38,7 @@ public class WarAndPiece {
         }
         ISearchEngine searchEngine = new EasySearch();
         System.out.println( "\nESвойна= " + searchEngine.search(content, "война"));
-        System.out.println( "ESи= " + searchEngine.search(content, "и"));
+        System.out.println( "ESи= " + searchEngine.search(content, " и "));
         System.out.println( "ESмир= " + searchEngine.search(content, "мир"));
         ISearchEngine RegExSearch = new RegExSearch();
         System.out.println("война= " + RegExSearch.search(content, "война"));
@@ -48,7 +48,7 @@ public class WarAndPiece {
  }
 
 
-    private static String readAllBytes(String filePath){
+    public static String readAllBytes(String filePath){
         String content = "";
         try{
             content = new String(Files.readAllBytes(Paths.get(filePath)));
@@ -56,7 +56,7 @@ public class WarAndPiece {
         catch (IOException e){
             e.printStackTrace();
         }
-        return content;
+        return content.replaceAll("\\p{Punct}", " ");
     }
 }
 
