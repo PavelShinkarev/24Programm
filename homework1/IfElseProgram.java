@@ -3,7 +3,6 @@ package homework1;
 import java.util.Scanner;
 
 public class IfElseProgram {
-
     public static void main(String[] args) {
         String name1 = "Вася";
         String name2 = "Анастасия";

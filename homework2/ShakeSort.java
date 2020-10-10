@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class ShakeSort {
     public static void main(String[] args) {
-
         int[] mass1 = {1, 2, 3, 4, 5, 6};
         int[] mass2 = {1, 1, 1, 1};
         int[] mass3 = {9, 1, 5, 99, 9, 9};
@@ -19,7 +18,6 @@ public class ShakeSort {
         shakerSort(mass3);
         System.out.print("mass4 до сортировки" + Arrays.toString(mass4) + " -> mass4 после сортировки ");
         shakerSort(mass4);
-
         Random rand = new Random();
         int[] array = new int[rand.nextInt(10)];
         for (int i = 0; i < array.length; i++) {
@@ -27,7 +25,6 @@ public class ShakeSort {
         }
         System.out.print("Random array до сортировки" + Arrays.toString(array) + " -> Random array после сортировки ");
         shakerSort(array);
-
         Scanner input = new Scanner(System.in);
         System.out.println("Введите размер массива: ");
         int size = input.nextInt();
@@ -38,8 +35,7 @@ public class ShakeSort {
         }
         System.out.print("arraySc до сортировки" + Arrays.toString(arraySc) + " -> arraySc после сортировки ");
         shakerSort(arraySc);
-
-    }
+}
     public static void shakerSort(int[] array) {
         int temp;
         int leftSide = 0;

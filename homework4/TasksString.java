@@ -1,7 +1,6 @@
 package homework4;
 
 import java.util.Scanner;
-
 import static homework4.Numbers.DOUBLE;
 import static homework4.Numbers.MAIN;
 
@@ -34,9 +33,8 @@ public class TasksString {
             String string = DoubleToString(mark);
             System.out.println(string);
     }
-
+        System.out.println(toWeek(18));
 }
-
     public static String toString(int number, Numbers numbers){
         StringBuilder builder = new StringBuilder();
         if(number == 0){
@@ -164,7 +162,6 @@ public class TasksString {
             }
         return builder.toString();
    }
-
     public static String toWeek(int day){
         StringBuilder builder = new StringBuilder();
         int week = day / 7;

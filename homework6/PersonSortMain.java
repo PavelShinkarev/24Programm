@@ -1,10 +1,8 @@
 package homework6;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.*;
 
-public class SortMain {
+public class PersonSortMain {
     public static void main(String[] args) {
 
         LinkedList<Person> persons = new LinkedList<>();
@@ -22,17 +20,12 @@ public class SortMain {
         System.out.println("LinkedList - время сортировки " + (System.currentTimeMillis() -
                 timesortLinkedList) + " мсек.");
         long timeDisplayLinked = System.currentTimeMillis();// время вывода в консоль
-
-
         for (int i = 0; i < persons.size(); i++) { // итерирование через for
             Person person = persons.get(i);
 //            System.out.println("Password - " + person.getPassword() + " //////" +  "nick -" + person.getNick());
         }
-
-
         System.out.println("LinkedList - время вывода в консоль(for) " + (System.currentTimeMillis()-
                 timeDisplayLinked));
-
         long timeDisplayLinkedList = System.currentTimeMillis(); // время вывода в консоль
         Iterator<Person> personIterator = persons.iterator(); // итерирование через Iterator
         while(personIterator.hasNext()){
@@ -41,7 +34,6 @@ public class SortMain {
         }
         System.out.println("LinkedList - время вывода в консоль(Iterator) " + (System.currentTimeMillis() -
                 timeDisplayLinkedList) + " мсек.");
-
         Iterator<Person> personDeleteIterator = persons.iterator(); // удаление через Iterator
         long deleteLinked = System.currentTimeMillis(); // время удаления
         while(personDeleteIterator.hasNext()){
@@ -50,8 +42,6 @@ public class SortMain {
         }
         System.out.println("LinkedList - удаление " + (System.currentTimeMillis()-
                 deleteLinked)+ " мсек.");
-
-
         ArrayList<Person> Arrayperson = new ArrayList<>();
         long timeArrayList = System.currentTimeMillis();    // время заполнения
         for (int i = 0; i < 100_000 ; i++){
@@ -66,26 +56,21 @@ public class SortMain {
                 thenComparing(new ConpareNick())));
         System.out.println("ArrayList - время сортировки " + (System.currentTimeMillis() -
                 timesortArrayList)+ " мсек.");
-
         long timeArrayWithFor = System.currentTimeMillis();// время вывода в консоль
-        // итерация for
         for (int i = 0; i < Arrayperson.size() ; i++) {
             Person person = Arrayperson.get(i);
 //            System.out.println("Password - " + person.getPassword() + "//////" +  "nick -" + person.getNick());
         }
         System.out.println("ArrayList - время вывода в консоль(for) " + (System.currentTimeMillis()-
                 timeArrayWithFor));
-
         long timeDisplayArrayList = System.currentTimeMillis(); // время вывода в консоль
         Iterator<Person> ArraypersonIterator = Arrayperson.iterator();
-
         while(ArraypersonIterator.hasNext()){
             Person a = ArraypersonIterator.next();
 //            System.out.println("Password - " +a.getPassword() + " ///// " + "nick - " + a.getNick());
         }
         System.out.println("ArrayList - время вывода(Iterator) " + (System.currentTimeMillis() -
                 timeDisplayArrayList)+ " мсек.");
-
         Iterator<Person> personDeleteIteratorA = Arrayperson.iterator(); // удаление через Iterator
         long deleteArray = System.currentTimeMillis(); // время удаления
         while(personDeleteIteratorA.hasNext()){
@@ -94,9 +79,6 @@ public class SortMain {
         }
         System.out.println("ArrayList - удаление " + (System.currentTimeMillis()-
                 deleteArray)+ " мсек.");
-
-
-
         HashSet<Person> Hperson = new HashSet<>();
         long timeHashSet = System.currentTimeMillis();
         for (int i = 0; i < 100_000 ; i++) {
@@ -114,14 +96,6 @@ public class SortMain {
         long timeDisplayHashSet = System.currentTimeMillis(); // время вывода в консоль
         System.out.println("HashSet - время сортировки " + (System.currentTimeMillis() -
                 timesortHashSet)+ " мсек.");
-
-
-        // итерация for
-        for (int i = 0; i < myTreeSet.size() ; i++) {
-//            Person person =  myTreeSet. пока немогу найти способ
-        }
-
-
         Iterator<Person> HashpersonIterator = myTreeSet.iterator();
         while(HashpersonIterator.hasNext()){
             Person a = HashpersonIterator.next();
@@ -129,11 +103,16 @@ public class SortMain {
         }
         System.out.println("HashSet - время вывода в консоль (Iterator) " + (System.currentTimeMillis() -
                 timeDisplayHashSet)+ " мсек.");
-
         Comparator<Person> cmped = new CompareLeghthPassword().thenComparing(new ComparePassword().
                 thenComparing(new ConpareNick()));
-
-
+        ArrayList<Person> arrayList = new ArrayList<>(myTreeSet);
+        long timeHashSetFor = System.currentTimeMillis();
+        for (int i = 0; i < arrayList.size() ; i++) {
+            Person a = arrayList.get(i);
+//            System.out.println("Password - " + a.getPassword() + "//////" +  "nick -" + a.getNick());
+        }
+        System.out.println("HashSet(Array) - время вывода в консоль(for) " + (System.currentTimeMillis()-
+                timeHashSetFor));
         Iterator<Person> personDeleteIteratorH = Hperson.iterator(); // удаление через Iterator
         long deleteHash = System.currentTimeMillis(); // время удаления
         while(personDeleteIteratorH.hasNext()){
@@ -142,10 +121,6 @@ public class SortMain {
         }
         System.out.println("HashSet - удаление " + (System.currentTimeMillis()-
                 deleteHash)+ " мсек.");
-
-
-
-
         TreeSet<Person> Tperson = new TreeSet<>(cmped);
         long timeTreeSet = System.currentTimeMillis();
         for (int i = 0; i < 100_000 ; i++) {
@@ -156,11 +131,6 @@ public class SortMain {
         long timeDisplayTreeeSet = System.currentTimeMillis(); // время вывода в консоль
         System.out.println("TreeSet - время заполнения " + (System.currentTimeMillis() -
                 timeTreeSet)+ " мсек.");
-
-
-        // итерация for пока немогу найти способ
-
-
         Iterator<Person> TreepersonIterator = Tperson.iterator();
         while(TreepersonIterator.hasNext()){
             Person a = TreepersonIterator.next();
@@ -168,7 +138,14 @@ public class SortMain {
         }
         System.out.println("TreeSet - время вывода в консоль (Iterator) " + (System.currentTimeMillis() -
                 timeDisplayTreeeSet)+ " мсек.");
-
+        ArrayList<Person> arrayTreeSet = new ArrayList<>(Tperson);
+        long timeTreeSetFor = System.currentTimeMillis();
+        for (int i = 0; i < arrayTreeSet.size(); i++) {
+            Person a = arrayTreeSet.get(i);
+//            System.out.println("Password - " + a.getPassword() + " ///// " + "nick - " + a.getNick());
+        }
+        System.out.println("TreeSet(Array) - время вывода в консоль " + (System.currentTimeMillis()-
+                timeTreeSetFor)+ " мсек.");
         Iterator<Person> personDeleteIteratorT = Tperson.iterator(); // удаление через Iterator
         long deleteTree = System.currentTimeMillis(); // время удаления
         while(personDeleteIteratorT.hasNext()){
@@ -177,8 +154,6 @@ public class SortMain {
         }
         System.out.println("TreeSet - удаление " + (System.currentTimeMillis()-
                 deleteTree)+ " мсек.");
-
-
     }
 }
 

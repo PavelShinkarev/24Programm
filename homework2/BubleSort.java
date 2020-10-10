@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class BubleSort {
     public static void main(String[] args) {
-
         int[] mass1 = {1, 2, 3, 4, 5, 6};
         int[] mass2 = {1, 1, 1, 1};
         int[] mass3 = {9, 1, 5, 99, 9, 9};
@@ -19,7 +18,6 @@ public class BubleSort {
         bubbleSort(mass3);
         System.out.print("mass4 до сортировки" + Arrays.toString(mass4) + " -> mass4 после сортировки ");
         bubbleSort(mass4);
-
         Random rand = new Random();
         int[] array = new int[rand.nextInt(10)];
         for (int i = 0; i < array.length; i++) {
@@ -38,9 +36,7 @@ public class BubleSort {
         }
         System.out.print("arraySc до сортировки" + Arrays.toString(arraySc) + " -> arraySc после сортировки ");
         bubbleSort(arraySc);
-
-
-    }
+}
     public static void bubbleSort(int[] mass){
         boolean isSort = true;
         int buffer;

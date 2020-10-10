@@ -9,11 +9,10 @@ import java.util.Scanner;
 public class Task3 {
 
     public static void main(String[] args) {
-         int sum = GetNumber();
+         int sum = getNumber();
          System.out.println("Результат " + sum);
     }
-
-    public static int GetNumber() {
+    public static int getNumber() {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите первое число ");
         int a = in.nextInt();

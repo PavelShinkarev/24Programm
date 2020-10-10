@@ -12,7 +12,7 @@ class DataContainer <T> {
         this.data = (T[]) Array.newInstance(Integer, 10);
     }
 
-    int add(T item) {
+    public int add(T item) {
         if (this.index == this.data.length) {
             T[] copy = Arrays.copyOf(data, this.data.length + 1);
             this.data = copy;
@@ -20,36 +20,35 @@ class DataContainer <T> {
         this.data[this.index] = item;
         return this.index++;
     }
-
-    T get(int index) {
-        return (T)data[index];
+    public T get(int index) {
+        return (T) data[index];
     }
-
-    T[] getItems() {
-        return (T[])this.data;
+    public T[] getItems() {
+        return (T[]) this.data;
     }
-
-    boolean delete(int index) {
-        if(index > this.index -1){
+    public int getLenght(){
+        return this.data.length;
+    }
+    public boolean delete(int index) {
+        if (index > this.index - 1) {
             System.out.println("Такого индекса нет");
             return false;
         }
         T[] temp = Arrays.copyOf(data, this.data.length - 1);
         int j = 0;
-        for (int i = 0; i < this.data.length ; i++) {
-            if(index !=  i){
+        for (int i = 0; i < this.data.length; i++) {
+            if (index != i) {
                 temp[j] = this.data[i];
                 j++;
             }
         }
         this.data = temp;
-        index--;
+        this.index--;
         return true;
     }
 
-    boolean deleteItem(T item) {
-
-        for (int i = 0; i < this.data.length ; i++) {
+    public boolean deleteItem(T item) {
+        for (int i = 0; i < this.data.length; i++) {
             if (this.data[i] == (T) item) {
                 boolean temp = delete(i);
                 return true;
@@ -58,50 +57,65 @@ class DataContainer <T> {
         System.out.println("No item");
         return false;
     }
-
-    void sort(Comparator<T> comparator){
+    public String toString(T[] mass) { // без удаления ячеек с null
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        sb.append(String.valueOf(mass[0]));
+        for (int i = 1; i<= mass.length-1 ; i++) {
+            if (mass[i] != null){
+                sb.append(", ");
+                sb.append(String.valueOf(mass[i]));
+            }
+        }
+        return sb.append(']').toString();
+    }
+    public void sort(Comparator<T> comparator) {
         int a = 0;                                    // считаем сколкьо null в массиве
-        for (int i = 0; i < this.data.length ; i++) {
+        for (int i = 0; i < this.data.length; i++) {
             if (this.data[i] == null) {
-                a += 1;
+                a++;
             }
         }
-        // создаем новый массив без null
-                T[] temp = Arrays.copyOf(data, this.data.length - a);
-                int k = 0;
-                for (int j = 0; j < this.data.length; j++) {
-                    temp[k] = this.data[j];
-                        k++;
-                this.data = temp;
-                }
+        T[] temp = Arrays.copyOf(data, this.data.length - a); // создаем новый массив без null
+        int k = 0;
+        for (int j = 0; j < this.data.length; j++) {
+            temp[k] = this.data[j];
+            k++;
+            this.data = temp;
+        }
         T tmp; // сортиреум
-        for (int i = 0; i < this.data.length-1 ; i++) {
-            for (int j = 0; j < this.data.length-1; j++) {
-                if(comparator.compare(this.data[j], this.data[j + 1]) > 0){
+        for (int i = 0; i < this.data.length - 1; i++) {
+            for (int j = 0; j < this.data.length - 1; j++) {
+                if (comparator.compare(this.data[j], this.data[j + 1]) > 0) {
                     tmp = this.data[j];
-                    this.data[j] = this.data[j+1];
-                    this.data[j+1] = tmp;
+                    this.data[j] = this.data[j + 1];
+                    this.data[j + 1] = tmp;
                 }
             }
         }
     }
-
-        @Override
-        public String toString () {
-            int a = 0;                                    // считаем сколкьо null в массиве
-            for (int i = 0; i < this.data.length; i++) {
-                if (this.data[i] == null) {
-                    a += 1;
+    public static <V extends Comparable> void sort(DataContainer<V> container) {
+        V tmp;
+        for (int i = 0; i < container.data.length - 1; i++) {
+            for (int j = 0; j < container.data.length - 1; j++) {
+                if (container.data[j].compareTo(container.data[j + 1]) > 0) {
+                    tmp = container.data[j];
+                    container.data[j] = container.data[j + 1];
+                    container.data[j + 1] = tmp;
                 }
             }
-            // создаем новый массив без null
-            T[] temp = Arrays.copyOf(data, this.data.length - a);
-            int k = 0;
-            for (int j = 0; j < this.data.length; j++) {
-                temp[k] = this.data[j];
-                k++;
-                this.data = temp;
-            }
-            return "data = " + Arrays.toString(temp);
         }
     }
+    public static <V> void sort(DataContainer<V> container, Comparator<V> comparator) {
+        V tmp;
+        for (int i = 0; i < container.data.length - 1; i++) {
+            for (int j = 0; j < container.data.length - 1; j++) {
+                if (comparator.compare(container.data[j], container.data[j + 1]) > 0) {
+                    tmp = container.data[j];
+                    container.data[j] = container.data[j + 1];
+                    container.data[j + 1] = tmp;
+                }
+            }
+        }
+    }
+}
