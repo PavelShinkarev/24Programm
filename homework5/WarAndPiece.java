@@ -44,7 +44,7 @@ public class WarAndPiece {
         System.out.println("война= " + RegExSearch.search(content, "война"));
         System.out.println("и= " + RegExSearch.search(content, "и"));
         System.out.println("мир= " + RegExSearch.search(content, "Мир"));
- }
+    }
     public static String readAllBytes(String filePath){
         String content = "";
         try{

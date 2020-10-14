@@ -2,7 +2,6 @@ package homework6;
 
 import java.io.File;
 import java.util.Random;
-
 import static homework5.WarAndPiece.readAllBytes;
 
 public class PersonNickRandom {
