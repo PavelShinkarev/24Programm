@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class NumberPov {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите число(может быть дробным и отрицательным):");
         if(sc.hasNextDouble()){

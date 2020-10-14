@@ -7,15 +7,12 @@ public class Animal {
     public int getAge() {
         return age;
     }
-
     public void setAge(int age) {
         this.age = age;
     }
-
     public String getNick() {
         return nick;
     }
-
     public void setNick(String nick) {
         this.nick = nick;
     }
@@ -23,7 +20,5 @@ public class Animal {
     public Animal(int age, String nick){
         this.age = age;
         this.nick = nick;
-
-
     }
 }

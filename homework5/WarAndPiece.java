@@ -1,5 +1,6 @@
 package homework5;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -7,9 +8,8 @@ import java.util.*;
 
 public class WarAndPiece {
     public static void main(String[] args) {
-        String filePath = "d:/Java/Война и мир_книга.txt";
+        String filePath = "src"+ File.separator + "Война и мир_книга.txt";
         String content = (readAllBytes(filePath));
-
         Set<String> uniques = new HashSet<>();
         String[]str = content.split("\\s+");
         for (String word : str)
@@ -44,10 +44,7 @@ public class WarAndPiece {
         System.out.println("война= " + RegExSearch.search(content, "война"));
         System.out.println("и= " + RegExSearch.search(content, "и"));
         System.out.println("мир= " + RegExSearch.search(content, "Мир"));
-
  }
-
-
     public static String readAllBytes(String filePath){
         String content = "";
         try{

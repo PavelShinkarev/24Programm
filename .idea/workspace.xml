@@ -5,13 +5,26 @@
       <change afterPath="$PROJECT_DIR$/homework4/Numbers.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/homework4/TasksString.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/homework4/homework4/Generics/DataComporator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework5/EasySearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework5/ISearchEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework5/RegExSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework6/AnimalNickRandom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework6/AnimalSortMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework1/FourProgramm.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework1/FourProgramm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework1/IfElseProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework1/IfElseProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework1/IfProgramm.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework1/IfProgramm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework1/Operators1.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework1/Operators1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework1/Operators2.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework1/Operators2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework1/PhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework1/PhoneNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework1/SwitchProgramm.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework1/SwitchProgramm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework1/Task3.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework1/Task3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/BubleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/BubleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/NumberPov.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/NumberPov.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/ShakeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/ShakeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/TaskOneDotOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/TaskOneDotOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework4/homework4/Generics/DataContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework4/homework4/Generics/DataContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework4/homework4/Generics/DataContainerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework4/homework4/Generics/DataContainerMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework4/homework4/TasksString.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/homework5/WarAndPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework5/WarAndPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework6/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework6/Animal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +43,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -46,9 +63,31 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="712" y="343" key="#Notifications" timestamp="1602337719126">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="712" y="343" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1602337719126" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1601405929892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601405929892" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1602693518410">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602693518410" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/homework5/WarAndPiece.java</url>
+          <line>8</line>
+          <properties class="homework5.WarAndPiece" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

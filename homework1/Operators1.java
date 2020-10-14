@@ -3,12 +3,10 @@ package homework1;
 public class Operators1 {
 
     public static void main(String[] args){
-
         int a = 42;
         int b = 15;
         int m = -42;
         int n = -15;
-
         System.out.println(~a); // 0010 1010 result 1110 0111
         System.out.println(~b); // 0000 1111 result 1111 0000
         System.out.println(a & b); // 0010 1010 & 0000 1111 result 0000 1010
@@ -38,7 +36,6 @@ public class Operators1 {
         System.out.println(b << 2); // 0000 1111 << 2 result 0011 1100
         System.out.println(b <<= 2); // 0000 1111 << 2 result 0011 1100; now b = 60
         b = 15;
-
         System.out.println(~m); // 1101 0110 result 0010 1001
         System.out.println(~n); // 1111 0001 result 0000 1110
         System.out.println(m & n); // 1101 0110 & 1111 0001  result 1 1101 0000
