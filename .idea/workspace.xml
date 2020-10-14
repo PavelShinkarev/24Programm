@@ -25,6 +25,10 @@
       <change beforePath="$PROJECT_DIR$/homework4/homework4/TasksString.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/homework5/WarAndPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework5/WarAndPiece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework6/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/homework6/Animal.java" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/homework6/SortMain.java" beforeDir="false" />
+>>>>>>> c4ef23fb2c0a2ff9d46861324b0fb0ce9d0eac54
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +48,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+=======
+>>>>>>> c4ef23fb2c0a2ff9d46861324b0fb0ce9d0eac54
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
