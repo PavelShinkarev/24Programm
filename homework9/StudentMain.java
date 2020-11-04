@@ -20,11 +20,11 @@ public class StudentMain {
                 .limit(10_000)
                 .collect(Collectors.toList())
         ;
-
+        ScannerClass.scannerMethod(students);
 //        WriterFiles.fileWrit(students);
 //        FIOWriter.fileWritten(students, false);
 //        TurnToBinaryFile.turnBytes(students);
         SortStudents.sortMethod(students);
-        ReadTopStudents.readFile();
+//        ReadTopStudents.readFile();
     }
 }

@@ -7,15 +7,9 @@ import java.io.PrintWriter;
 import java.util.List;
 
 public class FIOWriter<T> {
-    public static <T> void fileWritten(List<T> list, boolean a) {
-        String str = "";
-        if(a == false){
-             str = "src" + File.separator + "FIOHomeWork9.txt";
-        }else if(a == true) {
-            str = "src" + File.separator + "TopStudents.txt";
-        }
+    public static <T> void fileWritten(List<T> list, boolean a, String path) {
         try {
-            PrintWriter pw = new PrintWriter(new FileOutputStream(str));
+            PrintWriter pw = new PrintWriter(new FileOutputStream(path));
             for(T student : list){
                 pw.write(student.toString());
                 pw.write("\n");

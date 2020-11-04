@@ -1,5 +1,6 @@
 package homework9;
 
+import java.io.File;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -18,6 +19,7 @@ public class SortStudents {
                  .forEach(student -> System.out.printf("%s %s %s - %d \n",
                         student.getName(), student.getFamilia(), student.getOtchecstvo(), student.getMark()))
                         ;
-        FIOWriter.fileWritten( coll, true);
+         String str = "src" + File.separator + "TopStudents.txt";
+        FIOWriter.fileWritten( coll, true, str );
     }
 }
