@@ -16,6 +16,7 @@ public class WarAndPiece {
             uniques.add(word);
         System.out.println(uniques);
         System.out.println(uniques.size());
+
         Map<String, Integer> collection = new HashMap<>();
         for (String word : str) {
             Integer oldCount = collection.get(word);
